@@ -1,5 +1,7 @@
 import type { Route } from "./+types/details";
 import type { Project } from "~/types";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router";
 
 export async function clientLoader({ request, params }:Route.ClientLoaderArgs): Promise<Project> {
     const res = await fetch(`http://localhost:8000/projects/${params.id}`);
@@ -15,10 +17,16 @@ export function HydrateFallback() {
 
 const ProjectDetailsPage = ({ loaderData }:Route.ComponentProps) => {
     const project = loaderData;
-    console.log(project);
+    // console.log(project);
     return ( 
         <>
-            Project Details
+            <Link to='/projects' className="flex items-center text-blue-400 hover:text-blue-500 mb-6 transition">
+                <FaArrowLeft className="mr-2" /> Back to Projects
+            </Link>
+
+            <div className="grid gap-8 md:grid-cols-2 items-start">
+                <img src={project.image} alt={project.title} className="w-full rounded-lg shadow-md"/>
+            </div>
         </>
      );
 }
