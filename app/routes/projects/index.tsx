@@ -3,7 +3,7 @@ import type { Project } from '~/types';
 import { useState } from "react";
 import ProjectCard from "~/components/ProjectCard";
 import { index } from "@react-router/dev/routes";
-
+import Pagination from "~/components/Pagination";
 
 export async function loader({request}:Route.LoaderArgs):Promise<{ projects: Project[] }> {
     const res = await fetch('http://localhost:8000/projects');
@@ -37,6 +37,7 @@ const ProjectsPage = ({loaderData}: Route.ComponentProps) => {
                     <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
+            <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} />
         </>
      );
 }
