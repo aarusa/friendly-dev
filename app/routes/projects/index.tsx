@@ -5,6 +5,13 @@ import ProjectCard from "~/components/ProjectCard";
 import { index } from "@react-router/dev/routes";
 import Pagination from "~/components/Pagination";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "My Projects" },
+    { name: "description", content: "Arusha Shahi Portfolio" },
+  ];
+}
+
 export async function loader({request}:Route.LoaderArgs):Promise<{ projects: Project[] }> {
     const res = await fetch('http://localhost:8000/projects');
     const data = await res.json();

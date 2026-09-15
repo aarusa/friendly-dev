@@ -1,3 +1,12 @@
+import type { Route } from "./+types";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Contact Me" },
+    { name: "description", content: "Arusha Shahi Portfolio" },
+  ];
+}
+
 const ContactPage = () => {
     return ( 
         <>
