@@ -7,7 +7,7 @@ import Pagination from "~/components/Pagination";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "My Projects" },
+    { title: "Friendly Dev | Projects" },
     { name: "description", content: "Arusha Shahi Portfolio" },
   ];
 }
