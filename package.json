@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-router/node": "^8",
     "@react-router/serve": "^8",
+    "framer-motion": "^13.3.0",
     "isbot": "^5.1.36",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
@@ -29,5 +30,8 @@
     "typescript": "^5.9.3",
     "vite": "^8.0.3",
     "vite-plugin-devtools-json": "^1.1.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
